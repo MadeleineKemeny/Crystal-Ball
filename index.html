@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gem Addition Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <div row="col-12-sm">
+        <header class="masthead">
+            <img src="assets/images/title-art1.png">
+        </header>
+    </div>
+
+    <div class="gamecontainer">
+        <h1>Let’s Play <em>Gem Addition</em>!</h1>
+        
+        <div class="gamecontainer">
+            <p>Your computer has chosen a number and displayed it below. To begin trying to match the number, click a gem. Each gem has a different numeric value. Add until you match the number your computer displays.</p>
+            <br>
+            <div class="grid-container" id=grad1>
+                <div>
+                    <div id="grid-item" class="col-6">
+                        <p><h3>The number is:</h3></p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div id="grid-item" class="col-6">
+                        <p>Wins:<span id="wins"></span></p>
+                        <p>Losses:<span id="losses"></span></p>
+                    </div>
+                    <br>    
+                </div>
+
+                <div>
+                    <div id="grid-item" class="col-12">
+                        <h3>Your clicks this round add up to:<span id="gemClicksTotal"></span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script src="assets/javascript/game.js"></script>  
+</body>
+</html>
