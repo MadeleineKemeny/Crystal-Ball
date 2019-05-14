@@ -109,7 +109,7 @@ img {
   width: 100%;
 }
 
-#gems {
+.gems {
   position: relative;
   width: 25%;
   float: left;
