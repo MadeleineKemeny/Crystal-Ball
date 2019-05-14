@@ -21,33 +21,45 @@
         <div class="gamecontainer">
             <p>Your computer has chosen a number and displayed it below. To begin trying to match the number, click a gem. Each gem has a different numeric value. Add until you match the number your computer displays.</p>
             <br>
-            <div class="grid-container" id=grad1>
-                <div>
-                    <div id="grid-item" class="col-6">
-                        <p><h3>The number is:</h3></p>
+            <div class="scorecard1 col-12" id="grad1">
+                
+                <div class="scorecard2">
+                    <h3>The number is:</h3>
+                    
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <p>Wins:<span id="wins"></span></p>
+                    <p>Losses:<span id="losses"></span></p>
+                    
+                </div>
+                    
+
+                <div class="scorecard3">
+                    <h3>Your sum:<span id="gemClicksTotal"></span></h3>
+
+                    <br>
+
+                    <p>Pick a gem...</p>
+
+                    <div id="gembox" class=col-12>
+                        
+                        <img id="gems" src="assets/images/sapphire.png"></img>
+                        <img id="gems" src="assets/images/emerald.png"></img>
+                        <img id="gems" src="assets/images/topaz.png"></img>
+                        <img id="gems" src="assets/images/amethyst.png"></img>
                     </div>
                 </div>
                 
-                <div>
-                    <div id="grid-item" class="col-6">
-                        <p>Wins:<span id="wins"></span></p>
-                        <p>Losses:<span id="losses"></span></p>
-                    </div>
-                    <br>    
-                </div>
-
-                <div>
-                    <div id="grid-item" class="col-12">
-                        <h3>Your clicks this round add up to:<span id="gemClicksTotal"></span></h3>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="assets/javascript/game.js"></script>  
 </body>
 </html>
