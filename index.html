@@ -23,20 +23,23 @@
             <br>
             <div class="scorecard1 col-12" id="grad1">
                 
-                <div class="scorecard2">
+                <div class="scorecard2"> 
+                    <!-- computerNumber is random; wins & losses are calculated -->
                     <h3>The number is:<span id="computerNumber"></span></h3>
                     
                     <br>
                     <br>
                     <br>
-                    
+                    <!-- populated in html by instructions in .js file -->
                     <p>Wins:<span id="wins"></span></p>
                     <p>Losses:<span id="losses"></span></p>
+                    <p>Message:<span id="info"></span></p>
                     
                 </div>
                     
 
                 <div class="scorecard3">
+                    <!-- sum is calculated; picking gem is a click event -->
                     <h3>Your sum:<span id="sum"></span></h3>
 
                     <br>
@@ -44,11 +47,9 @@
                     <p>Pick a gem...</p>
 
                     <div id="gembox" class=col-12>
-                        
-                        <!-- <img class="gems" id="gemButton1" src="assets/images/sapphire.png"></img>
-                        <img class="gems" id="gemButton2" src="assets/images/emerald.png"></img>
-                        <img class="gems" id="gemButton3" src="assets/images/topaz.png"></img>
-                        <img class="gems" id="gemButton4" src="assets/images/amethyst.png"></img> -->
+                         <!-- populated by array of images in .js file -->
+                         <!-- images have random number assigned; hidden in console to prevent cheating! -->
+                         <!-- images are clickable and calculate/appear as sum -->
                     </div>
                 </div>
                 
@@ -60,6 +61,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="./assets/js/12mk.js"></script>  
+<script src="./assets/js/crystals.js"></script>  
 </body>
 </html>

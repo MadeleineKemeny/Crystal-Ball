@@ -1,73 +1,99 @@
+// to begin, store these values in memory
+var computerNumber = 0
+var wins = 0;
+var losses = 0;
+var sum = 0;
+var imageArray = ["./assets/images/sapphire.png","./assets/images/emerald.png","./assets/images/topaz.png","./assets/images/amethyst.png"]
+var imageValue=[]
 
+// cleans html 
+$("#wins").html(" <b>"+wins);
+$("#losses").html(" <b>"+losses);
 
-  var computerNumber = Math.floor(Math.random() * 101) + 19;
+// function defined: generate a random number between 19-120 and display in html.
+function computerCalculation(){
+  computerNumber = Math.floor(Math.random() * 101) + 19;
 
   $("#computerNumber").html(" " +computerNumber);
+}
 
-  var sum = 0;
-  var wins = 0;
-  var losses = 0;
-  $("#wins").html(" <b>"+wins);
-  $("#losses").html(" <b>"+losses);
+// function defined: when the games begins, do the following...
+function startGame(){
 
-  // Now for the hard part. Creating multiple crystals each with their own unique number value.
-
-  // We begin by expanding our array to include four options.
-  var imageArray = ["./assets/images/sapphire.png","./assets/images/emerald.png","./assets/images/topaz.png","./assets/images/amethyst.png"]
-
-
-  // Next we create a for loop to create crystals for every numberOption.
+  // resetting all items in #gembox (Isabel demonstrated why this is necessary--to prevent adding lines of gems)
+  sum=0;
+  $("#sum").html(" <b>"+sum);
+  $("#gembox").empty();
+  
+  // for loop to create crystals for every index value and generate random number 1-12 for each crystal
   for (var i = 0; i < 4; i++) {
-    var gemRandomNumber = Math.floor((Math.random() * 11) + 1);
-    // For each iteration, we will create an imageCrystal
-    var imageCrystal = $("<img>");
 
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
+    // on the fly and locally, replace "i" values with imageCrystal to show in html <img> elements
+    var imageCrystal = $("<img>");
+    
+    // local value: generate random numbers 1-12 for gems 
+    var gemRandomNumber = Math.floor((Math.random() * 11) + 1);
+
+    // addition of class ".crystal-image" to facilitate on-click event
     imageCrystal.addClass("crystal-image gems");
 
-    // Each imageCrystal will be given a src link to the crystal image
+    // connecting array index to image files; console log index number instead of random number to prevent cheating
     imageCrystal.attr("src",imageArray[i]);
     console.log(imageArray[i]);
 
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-    imageCrystal.attr("data-crystalvalue", gemRandomNumber);
+    // adding attribute "data-crystalValue" 
+    imageCrystal.attr("data-crystalvalue", i);
 
-    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
+    // assign images to #gembox and assign random number to each index of array
     $("#gembox").append(imageCrystal);
+    imageValue[i] = gemRandomNumber
   }
+    // hidden to prevent cheating as random number is stated: console.log(imageValue)
 
-  // This time, our click event applies to every single crystal on the page. Not just one.
+  // listening for click to begin sum calculation
   $(".crystal-image").on("click", function() {
-//    alert("clicked")
-    // Determining the crystal's value requires us to extract the value from the data attribute.
-    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
+    
+    // keep in data-crystalvalue the index of the array
+    var index = ($(this).attr("data-crystalvalue"));
+    var crystalValue = imageValue[index]
 
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-
-    console.log(crystalValue);
+    // also hidden to prevent cheating as random number is stated:: console.log(crystalValue)
     crystalValue = parseInt(crystalValue);
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
+
+    // sum equals click values as addends
     sum += crystalValue;
 
-
+    // calculates sum as clicks accrue
     $("#sum").html(" <b>"+sum);
-    // ("New score: " + sum);
-
+  
+    // win: calculation of clicks equals random computer number; adds +1 to "wins"; alerts user to "win"
     if (sum === computerNumber) {
       wins++;
       $("#wins").html(" <b>"+wins);
+      alert("Nice work! You won.")
+      // begin game without resetting wins/losses
+      start()
      
     }
 
+    // win: calculation of clicks > random computer number; adds +1 to "losses"; alerts user to "loss"
     else if (sum >= computerNumber) {
       losses++;
       $("#losses").html(" <b>"+losses);
-     
+      alert("Your number is too big! You lose.")
+        // begin game without resetting wins/losses
+        start()
     }
 
   });
+}
+
+function start(){
+// initiate the variables at start
+  computerCalculation()
+  startGame()
+}
+
+// run local scopes
+start()
+
