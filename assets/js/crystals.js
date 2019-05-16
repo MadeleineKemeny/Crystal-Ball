@@ -63,14 +63,14 @@ function startGame(){
     // sum equals click values as addends
     sum += crystalValue;
 
-    // calculates sum as clicks accrue
+    // displays sum in html
     $("#sum").html(" <b>"+sum);
   
     // win: calculation of clicks equals random computer number; adds +1 to "wins"; alerts user to "win"
     if (sum === computerNumber) {
       wins++;
       $("#wins").html(" <b>"+wins);
-      alert("Nice work! You won.")
+      alert(`Nice work! You won. Your sum is: ${sum}`)
       // begin game without resetting wins/losses
       start()
      
@@ -80,7 +80,7 @@ function startGame(){
     else if (sum >= computerNumber) {
       losses++;
       $("#losses").html(" <b>"+losses);
-      alert("Your number is too big! You lose.")
+      alert(`Your number is too big! You lose. Your sum is: ${sum}`)
         // begin game without resetting wins/losses
         start()
     }
