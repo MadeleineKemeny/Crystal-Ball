@@ -1,0 +1,6 @@
+# Crystal-Game
+
+Building this game according to the instructions was complete mayhem. I wrote and rewrote the pseudocode because all of the functionality wasn't clear in the first five readings of the homework instructions. Although pop-ups are used in the example game, it definitely looks better without them. I also was keen to be able to compare the random number with the calculated number (through user clicks) visually on the game board before the game reset... knwoing how far the player over-added allows that user to rethink what could have been done differently. Better UI/UX overall.
+Isabel and Phil added some flourishes--flags and logic statements that I had pseudo-coded but couldn't figure out how to implement. 
+Istockphoto.com generously donated low-res images that I used as artwork and I Photoshopped them into shape.
+My code sources included Phil, Isabel, Dave--who said NO POP-UPS!, Javascript For Kids (really!), class exercises, W3, Quora, StackOverflow, YouTube, and a few blogs here and there for minutiae. Google has now overtaken StackOverflow as the worst resource... examples from 3 years ago aren't helpful! And as everyone knows, all things on the internet are true...?
